@@ -27,7 +27,7 @@ export default function Navbar() {
         socialItems={socialItems}
         displaySocials={true}
         displayItemNumbering={false}
-        menuButtonColor="#000000ff"
+        menuButtonColor="#ffffff"
         openMenuButtonColor="#000000ff"
         changeMenuColorOnOpen={true}
         colors={['#B19EEF', '#5227FF']} // Degradado de morados
