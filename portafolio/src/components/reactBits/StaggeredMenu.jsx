@@ -32,7 +32,7 @@ export const StaggeredMenu = ({
 
   const textInnerRef = useRef(null);
   const textWrapRef = useRef(null);
-  const [textLines, setTextLines] = useState(['Menu', 'Salir']);
+  const [textLines, setTextLines] = useState(['Menú', 'Salir']);
 
   const openTlRef = useRef(null);
   const closeTweenRef = useRef(null);
@@ -267,8 +267,8 @@ export const StaggeredMenu = ({
 
     textCycleAnimRef.current?.kill();
 
-    const currentLabel = opening ? 'Menu' : 'Salir';
-    const targetLabel = opening ? 'Salir' : 'Menu';
+    const currentLabel = opening ? 'Menú' : 'Salir';
+    const targetLabel = opening ? 'Salir' : 'Menú';
     const cycles = 3;
 
     const seq = [currentLabel];
