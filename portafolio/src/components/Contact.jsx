@@ -46,7 +46,7 @@ export default function Contact() {
 
           {/* Correo */}
           <a
-            href="mailto:ignacioreyarayo25@gmail.com"
+            href="mailto:ignacioreynarayo25@gmail.com"
             className="group flex flex-col items-center justify-center p-6 rounded-2xl border hover:border-red-500 transition shadow hover:shadow-xl"
           >
             <svg
@@ -58,7 +58,7 @@ export default function Contact() {
               <path d="M12 15.435L0 8.4V18a1.5 1.5 0 001.5 1.5h21A1.5 1.5 0 0024 18V8.4l-12 7.035z" />
             </svg>
             <h4 className="font-semibold text-lg">Correo</h4>
-            <p className="text-sm text-gray-500">ignacioreyarayo25@gmail.com</p>
+            <p className="text-sm text-gray-500">ignacioreynarayo25@gmail.com</p>
           </a>
         </div>
       </div>
