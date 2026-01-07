@@ -8,7 +8,7 @@ export default function Navbar() {
     { label: 'Sobre mí', ariaLabel: 'Ir a sobre mí', link: '#about' },
     { label: 'Proyectos', ariaLabel: 'Ir a proyectos', link: '#projects' },
     { label: 'Tecnologías', ariaLabel: 'Ir a tecnologías', link: '#tech' },
-    { label: 'Habilidades', ariaLabel: 'Ir a habilidades', link: '#skills' },
+    // { label: 'Habilidades', ariaLabel: 'Ir a habilidades', link: '#skills' },
     { label: 'Contacto', ariaLabel: 'Ir a contacto', link: '#contact' }
   ];
 

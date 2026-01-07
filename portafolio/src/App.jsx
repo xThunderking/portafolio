@@ -14,7 +14,7 @@ function App() {
       <About />
       <Projects />
       <Technologies />
-      <SoftSkills />
+      {/* <SoftSkills /> */}
       <Contact />
     </>
   )
