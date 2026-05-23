@@ -22,17 +22,17 @@ export default function About() {
             <p className="text-gray-600 mb-4 leading-relaxed">
               Soy Ingeniero en Gestión y Desarrollo de Software con experiencia en
               desarrollo web <span className="font-medium text-gray-800">full stack</span>,
-              especializado en la creación de soluciones digitales para PYMES.
-              He trabajado en proyectos reales donde la tecnología se utiliza
-              como una herramienta para optimizar procesos, mejorar la experiencia
-              del usuario y generar valor al negocio.
+              especializado en soluciones digitales para PYMES y sector salud.
+              Transformo necesidades operativas en productos claros, escalables
+              y orientados a resultados medibles para el negocio.
             </p>
 
             <p className="text-gray-600 mb-6 leading-relaxed">
               Tengo experiencia desarrollando sistemas web, landing pages,
               módulos personalizados y soluciones con integración de
               <span className="font-medium text-gray-800"> inteligencia artificial</span>,
-              como ChatBots orientados a atención y resolución de dudas.
+              como chatbots enfocados en atención, automatización y soporte
+              para mejorar tiempos de respuesta.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -54,7 +54,8 @@ export default function About() {
           {/* Cards de experiencia */}
           <div className="grid gap-6 sm:grid-cols-2">
             {/* Card 1 */}
-            <div className="p-6 rounded-2xl border shadow-sm hover:shadow-lg transition">
+            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-1 rounded-full bg-violet-500 mb-4"></div>
               <h5 className="font-semibold text-lg mb-2">Experiencia</h5>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Desarrollador Full Stack en <span className="font-medium">CODRIFY</span>,
@@ -64,16 +65,18 @@ export default function About() {
             </div>
 
             {/* Card 2 */}
-            <div className="p-6 rounded-2xl border shadow-sm hover:shadow-lg transition">
+            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-1 rounded-full bg-blue-500 mb-4"></div>
               <h5 className="font-semibold text-lg mb-2">Tecnologías</h5>
               <p className="text-gray-600 text-sm leading-relaxed">
-                JavaScript, TypeScript, React, PHP, Java, SQL, HTML, CSS,
-                control de versiones con Git y SVN.
+                JavaScript, TypeScript, React, Node.js, Laravel, SQL,
+                Docker, Firebase, AWS S3 y control de versiones con Git.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="p-6 rounded-2xl border shadow-sm hover:shadow-lg transition">
+            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-1 rounded-full bg-emerald-500 mb-4"></div>
               <h5 className="font-semibold text-lg mb-2">Formación</h5>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Ingeniero en Gestión y Desarrollo de Software, graduado de la
@@ -82,7 +85,8 @@ export default function About() {
             </div>
 
             {/* Card 4 */}
-            <div className="p-6 rounded-2xl border shadow-sm hover:shadow-lg transition">
+            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-1 rounded-full bg-amber-500 mb-4"></div>
               <h5 className="font-semibold text-lg mb-2">Enfoque</h5>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Desarrollo soluciones prácticas, escalables y orientadas

@@ -323,6 +323,24 @@ export const StaggeredMenu = ({
     }
   }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
 
+  const handleItemClick = useCallback(
+    (event, link) => {
+      if (typeof link === 'string' && link.startsWith('#')) {
+        const targetElement = document.querySelector(link);
+        if (targetElement) {
+          event.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (window.history?.replaceState) {
+            window.history.replaceState(null, '', link);
+          }
+        }
+      }
+
+      closeMenu();
+    },
+    [closeMenu]
+  );
+
   React.useEffect(() => {
     if (!closeOnClickAway || !open) return;
 
@@ -453,6 +471,7 @@ export const StaggeredMenu = ({
                       href={it.link}
                       aria-label={it.ariaLabel}
                       data-index={idx + 1}
+                      onClick={event => handleItemClick(event, it.link)}
                     >
                       <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                         {it.label}

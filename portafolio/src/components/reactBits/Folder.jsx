@@ -101,85 +101,104 @@ const Folder = ({ color = '#5227FF', size = 1, items = [], className = '' }) => 
       )}
 
       <div style={scaleStyle} className={className}>
-  <div
-    className={`group relative transition-all duration-200 ease-in cursor-pointer ${!open ? 'hover:-translate-y-2' : ''
-      }`}
-    style={{
-      ...folderStyle,
-      transform: open ? 'translateY(-8px)' : undefined
-    }}
-    onClick={handleClick}
-  >
-    <div
-      className="relative w-[100px] h-[80px] rounded-tl-0 rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px]"
-      style={{ backgroundColor: folderBackColor }}
-    >
-      <span
-        className="absolute z-0 bottom-[98%] left-0 w-[30px] h-[10px] rounded-tl-[5px] rounded-tr-[5px] rounded-bl-0 rounded-br-0"
-        style={{ backgroundColor: folderBackColor }}
-      ></span>
-      {papers.map((item, i) => {
-        let sizeClasses = '';
-        if (i === 0) sizeClasses = open ? 'w-[70%] h-[80%]' : 'w-[70%] h-[80%]';
-        if (i === 1) sizeClasses = open ? 'w-[80%] h-[80%]' : 'w-[80%] h-[70%]';
-        if (i === 2) sizeClasses = open ? 'w-[90%] h-[80%]' : 'w-[90%] h-[60%]';
-
-        const transformStyle = open
-          ? `${getOpenTransform(i)} translate(${paperOffsets[i].x}px, ${paperOffsets[i].y}px)`
-          : undefined;
-
-        return (
+        <div
+          className={`group relative transition-all duration-200 ease-in cursor-pointer ${!open ? 'hover:-translate-y-2' : ''
+            }`}
+          style={{
+            ...folderStyle,
+            transform: open ? 'translateY(-8px)' : undefined
+          }}
+          onClick={handleClick}
+        >
           <div
-            key={i}
-            onMouseMove={e => handlePaperMouseMove(e, i)}
-            onMouseLeave={e => handlePaperMouseLeave(e, i)}
-            className={`absolute z-20 bottom-[10%] left-1/2 transition-all duration-300 ease-in-out ${!open ? 'transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0' : 'hover:scale-110'
-              } ${sizeClasses}`}
-            style={{
-              ...(!open ? {} : { transform: transformStyle }),
-              backgroundColor: '#ffffff',
-              borderRadius: '12px',
-              boxShadow: '0 12px 30px rgba(0,0,0,0.25)'
-            }}
-
+            className="relative w-[100px] h-[80px] rounded-tl-0 rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px]"
+            style={{ backgroundColor: folderBackColor }}
           >
-            {item && (
-              <img
-                src={item.image}
-                alt={item.alt || ''}
-                className="w-full h-full object-cover rounded-lg cursor-pointer"
-                draggable={false}
-                onClick={e => {
-                  e.stopPropagation(); // evita cerrar el folder
-                  setSelectedImage(item);
-                }}
-              />
-            )}
+            <span
+              className="absolute z-0 bottom-[98%] left-0 w-[30px] h-[10px] rounded-tl-[5px] rounded-tr-[5px] rounded-bl-0 rounded-br-0"
+              style={{ backgroundColor: folderBackColor }}
+            ></span>
+            {papers.map((item, i) => {
+              let sizeClasses = '';
+              if (i === 0) sizeClasses = open ? 'w-[70%] h-[80%]' : 'w-[70%] h-[80%]';
+              if (i === 1) sizeClasses = open ? 'w-[80%] h-[80%]' : 'w-[80%] h-[70%]';
+              if (i === 2) sizeClasses = open ? 'w-[90%] h-[80%]' : 'w-[90%] h-[60%]';
 
+              const transformStyle = open
+                ? `${getOpenTransform(i)} translate(${paperOffsets[i].x}px, ${paperOffsets[i].y}px)`
+                : undefined;
+
+              return (
+                <div
+                  key={i}
+                  onMouseMove={e => handlePaperMouseMove(e, i)}
+                  onMouseLeave={e => handlePaperMouseLeave(e, i)}
+                  className={`absolute z-20 bottom-[10%] left-1/2 transition-all duration-300 ease-in-out ${!open ? 'transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0' : 'hover:scale-110'
+                    } ${sizeClasses}`}
+                  style={{
+                    ...(!open ? {} : { transform: transformStyle }),
+                    backgroundColor: '#ffffff',
+                    borderRadius: '12px',
+                    boxShadow: '0 12px 30px rgba(0,0,0,0.25)'
+                  }}
+
+                >
+                  {item && (
+                    <img
+                      src={item.image}
+                      alt={item.alt || ''}
+                      className="w-full h-full object-cover rounded-lg cursor-pointer"
+                      draggable={false}
+                      onClick={e => {
+                        e.stopPropagation(); // evita cerrar el folder
+                        setSelectedImage(item);
+                      }}
+                    />
+                  )}
+
+                </div>
+              );
+            })}
+            <div
+              className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out ${!open ? 'group-hover:[transform:skew(15deg)_scaleY(0.6)]' : ''
+                }`}
+              style={{
+                backgroundColor: color,
+                borderRadius: '5px 10px 10px 10px',
+                ...(open && { transform: 'skew(15deg) scaleY(0.6)' })
+              }}
+            ></div>
+            <div
+              className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out ${!open ? 'group-hover:[transform:skew(-15deg)_scaleY(0.6)]' : ''
+                }`}
+              style={{
+                backgroundColor: color,
+                borderRadius: '5px 10px 10px 10px',
+                ...(open && { transform: 'skew(-15deg) scaleY(0.6)' })
+              }}
+            ></div>
+
+            <div className="absolute inset-0 z-40 flex flex-col items-center justify-center pointer-events-none select-none">
+              <p className="text-[9px] font-semibold tracking-[0.12em] text-white/95 drop-shadow-sm">
+                DAME CLICK
+              </p>
+              <span
+                className="relative mt-1 block w-6 h-4 rounded-full border border-white/90 bg-white/10 transition-all duration-300"
+                aria-hidden="true"
+              >
+                <span
+                  className={`absolute left-1/2 top-1/2 w-[6px] h-[6px] -translate-x-1/2 rounded-full bg-white transition-all duration-300 ${open ? '-translate-y-1/2 opacity-100 scale-100' : '-translate-y-1/2 opacity-0 scale-50'
+                    }`}
+                ></span>
+                <span
+                  className={`absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 bg-white transition-all duration-300 origin-center ${open ? 'scale-x-0 opacity-0' : 'scale-x-100 opacity-100'
+                    }`}
+                ></span>
+              </span>
+            </div>
           </div>
-        );
-      })}
-      <div
-        className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out ${!open ? 'group-hover:[transform:skew(15deg)_scaleY(0.6)]' : ''
-          }`}
-        style={{
-          backgroundColor: color,
-          borderRadius: '5px 10px 10px 10px',
-          ...(open && { transform: 'skew(15deg) scaleY(0.6)' })
-        }}
-      ></div>
-      <div
-        className={`absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out ${!open ? 'group-hover:[transform:skew(-15deg)_scaleY(0.6)]' : ''
-          }`}
-        style={{
-          backgroundColor: color,
-          borderRadius: '5px 10px 10px 10px',
-          ...(open && { transform: 'skew(-15deg) scaleY(0.6)' })
-        }}
-      ></div>
+        </div>
       </div>
-    </div>
-  </div>
     </>
   );
 };
