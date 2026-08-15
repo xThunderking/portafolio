@@ -1,116 +1,82 @@
+const technologies = [
+  'React',
+  'JavaScript',
+  'TypeScript',
+  'Tailwind CSS',
+  'HTML5',
+  'CSS3',
+  'Next.js',
+  'Node.js',
+  'Express',
+  'NestJS',
+  'PHP',
+  'Laravel',
+  'Python',
+  'FastAPI',
+  'MySQL',
+  'PostgreSQL',
+  'MongoDB',
+  'SQLite',
+  'Redis',
+  'Firebase',
+  'AWS S3',
+  'AWS EC2',
+  'AWS Lambda',
+  'Supabase',
+  'Cloudflare',
+  'Inteligencia Artificial',
+  'Chatbots',
+  'Automatización',
+  'APIs REST',
+  'Linux',
+  'Git',
+  'GitHub',
+  'Docker',
+  'Docker Compose',
+  'Nginx',
+  'Vite',
+  'Prisma',
+  'JWT',
+  'GitHub Actions',
+  'CI/CD',
+]
+
+const midpoint = Math.ceil(technologies.length / 2)
+const technologyRows = [technologies.slice(0, midpoint), technologies.slice(midpoint)]
+
 export default function Technologies() {
-  const techs = [
-    // Frontend
-    "React", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "Next.js",
-
-    // Backend
-    "Node.js", "Express", "NestJS", "PHP", "Laravel", "Python", "FastAPI",
-
-    // Bases de datos
-    "MySQL", "PostgreSQL", "MongoDB", "SQLite", "Redis",
-
-    // Cloud / Plataforma
-    "Firebase", "AWS S3", "AWS EC2", "AWS Lambda", "Supabase", "Cloudflare",
-
-    // IA / Automatizacion
-    "Inteligencia Artificial", "Chatbots", "Automatización", "APIs REST",
-
-    // Dev / Infra
-    "Linux", "Git", "GitHub", "Docker", "Docker Compose", "Nginx", "Vite", "Prisma", "JWT", "GitHub Actions", "CI/CD"
-  ]
-
-  const row1 = techs.filter((_, index) => index % 2 === 0)
-  const row2 = techs.filter((_, index) => index % 2 !== 0)
-
   return (
-    <section
-      id="tech"
-      className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
-    >
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h3 className="text-3xl md:text-4xl font-bold mb-4">
-          Tecnologías
-        </h3>
-        <p className="text-gray-600 mb-12">
-          Herramientas modernas para crear productos web escalables, seguros y listos para produccion
-        </p>
-
-        {/* Carruseles en dos lineas para mejor lectura en celular */}
-        <div className="space-y-3">
-          <div className="relative w-full overflow-hidden">
-            <div className="flex w-max gap-3 sm:gap-4 animate-tech-scroll-left whitespace-nowrap py-1">
-              {[...row1, ...row1].map((tech, index) => (
-                <span
-                  key={`row1-${index}`}
-                  className="px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium
-                  bg-white shadow-md border border-gray-200
-                  hover:border-violet-500 hover:text-violet-600
-                  hover:shadow-violet-200 transition-all duration-300 cursor-default"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+    <section id="tech" className="overflow-hidden border-t border-white/10 bg-[#080808] py-20 text-white md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-10 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Stack / 03</p>
+            <h2 className="text-4xl font-black md:text-5xl">Herramientas de trabajo.</h2>
           </div>
-
-          <div className="relative w-full overflow-hidden">
-            <div className="flex w-max gap-3 sm:gap-4 animate-tech-scroll-right whitespace-nowrap py-1">
-              {[...row2, ...row2].map((tech, index) => (
-              <span
-                key={`row2-${index}`}
-                className="px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium
-                bg-white shadow-md border border-gray-200
-                hover:border-violet-500 hover:text-violet-600
-                hover:shadow-violet-200 transition-all duration-300 cursor-default"
-              >
-                {tech}
-              </span>
-              ))}
-            </div>
-          </div>
+          <p className="max-w-xl text-base leading-7 text-zinc-400 lg:justify-self-end">
+            Tecnologías para construir productos web escalables, seguros y listos para producción.
+          </p>
         </div>
       </div>
 
-      {/* Animaciones */}
-      <style>
-        {`
-          @keyframes tech-scroll-left {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-
-          @keyframes tech-scroll-right {
-            0% {
-              transform: translateX(-50%);
-            }
-            100% {
-              transform: translateX(0);
-            }
-          }
-
-          .animate-tech-scroll-left {
-            animation: tech-scroll-left 28s linear infinite;
-          }
-
-          .animate-tech-scroll-right {
-            animation: tech-scroll-right 32s linear infinite;
-          }
-
-          @media (max-width: 768px) {
-            .animate-tech-scroll-left {
-              animation-duration: 22s;
-            }
-
-            .animate-tech-scroll-right {
-              animation-duration: 24s;
-            }
-          }
-        `}
-      </style>
+      <div className="space-y-3 border-y border-white/10 py-6">
+        {technologyRows.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className={`tech-track flex w-max gap-3 whitespace-nowrap px-3 ${rowIndex === 0 ? 'tech-track-forward' : 'tech-track-reverse'}`}
+          >
+            {[...row, ...row].map((technology, index) => (
+              <span
+                key={`${technology}-${index}`}
+                className="inline-flex h-12 items-center border border-white/15 bg-[#111] px-5 text-sm font-semibold text-zinc-300 transition hover:border-[#f20d2f] hover:text-white"
+              >
+                <span className="mr-3 h-1.5 w-1.5 bg-[#f20d2f]" aria-hidden="true" />
+                {technology}
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
     </section>
   )
 }

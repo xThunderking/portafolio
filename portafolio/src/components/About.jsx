@@ -1,98 +1,54 @@
+const profileDetails = [
+  {
+    title: 'Experiencia',
+    text: 'Desarrollo full stack en CODRIFY, creando sitios, módulos funcionales y soluciones con inteligencia artificial.',
+  },
+  {
+    title: 'Formación',
+    text: 'Ingeniería en Gestión y Desarrollo de Software por la Universidad Tecnológica de la Costa Grande de Guerrero.',
+  },
+  {
+    title: 'Enfoque',
+    text: 'Productos claros y escalables para PYMES y sector salud, orientados a resolver procesos reales de negocio.',
+  },
+  {
+    title: 'Base técnica',
+    text: 'React, Node.js, Laravel, SQL, Docker, Firebase, AWS S3, APIs REST y control de versiones con Git.',
+  },
+]
+
 export default function About() {
   return (
-    <section id="about" className="min-h-screen py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Título */}
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-bold mb-4">Sobre mí</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Ingeniero en Gestión y Desarrollo de Software enfocado en crear
-            soluciones digitales eficientes, escalables y orientadas a negocio.
-          </p>
-        </div>
-
-        {/* Contenido */}
-        <div className="grid gap-12 lg:grid-cols-2 items-center">
-          {/* Texto principal */}
+    <section id="about" className="border-t border-white/10 bg-[#101010] py-20 text-white md:py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <h4 className="text-2xl font-semibold mb-4">
-              Perfil profesional
-            </h4>
-
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              Soy Ingeniero en Gestión y Desarrollo de Software con experiencia en
-              desarrollo web <span className="font-medium text-gray-800">full stack</span>,
-              especializado en soluciones digitales para PYMES y sector salud.
-              Transformo necesidades operativas en productos claros, escalables
-              y orientados a resultados medibles para el negocio.
+            <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Perfil / 02</p>
+            <h2 className="max-w-md text-4xl font-black md:text-5xl">Perfil, en breve.</h2>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-zinc-400">
+              Soy Ingeniero en Gestión y Desarrollo de Software. Diseño y construyo soluciones web full stack para convertir necesidades operativas en productos simples de usar y orientados a resultados.
             </p>
 
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Tengo experiencia desarrollando sistemas web, landing pages,
-              módulos personalizados y soluciones con integración de
-              <span className="font-medium text-gray-800"> inteligencia artificial</span>,
-              como chatbots enfocados en atención, automatización y soporte
-              para mejorar tiempos de respuesta.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-                Full Stack
-              </span>
-              <span className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-                PYMES
-              </span>
-              <span className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-                Optimización de procesos
-              </span>
-              <span className="px-4 py-2 rounded-full bg-gray-100 text-sm font-medium">
-                UX / UI funcional
-              </span>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {['Full stack', 'PYMES', 'Sector salud', 'Automatización'].map(item => (
+                <span key={item} className="border border-white/15 px-3 py-2 text-xs font-semibold text-zinc-300">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* Cards de experiencia */}
-          <div className="grid gap-6 sm:grid-cols-2">
-            {/* Card 1 */}
-            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-1 rounded-full bg-violet-500 mb-4"></div>
-              <h5 className="font-semibold text-lg mb-2">Experiencia</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Desarrollador Full Stack en <span className="font-medium">CODRIFY</span>,
-                participando en el diseño e implementación de landing pages,
-                módulos funcionales y ChatBots con IA para empresas.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-1 rounded-full bg-blue-500 mb-4"></div>
-              <h5 className="font-semibold text-lg mb-2">Tecnologías</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                JavaScript, TypeScript, React, Node.js, Laravel, SQL,
-                Docker, Firebase, AWS S3 y control de versiones con Git.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-1 rounded-full bg-emerald-500 mb-4"></div>
-              <h5 className="font-semibold text-lg mb-2">Formación</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Ingeniero en Gestión y Desarrollo de Software, graduado de la
-                Universidad Tecnológica de la Costa Grande de Guerrero.
-              </p>
-            </div>
-
-            {/* Card 4 */}
-            <div className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-slate-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-1 rounded-full bg-amber-500 mb-4"></div>
-              <h5 className="font-semibold text-lg mb-2">Enfoque</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Desarrollo soluciones prácticas, escalables y orientadas
-                a resultados, priorizando claridad, rendimiento y usabilidad.
-              </p>
-            </div>
+          <div className="grid border-t border-white/15 sm:grid-cols-2">
+            {profileDetails.map((detail, index) => (
+              <div
+                key={detail.title}
+                className={`border-b border-white/15 py-7 sm:px-7 ${index % 2 === 0 ? 'sm:border-r' : ''}`}
+              >
+                <p className="mb-3 font-mono text-xs text-[#ff2442]">0{index + 1}</p>
+                <h3 className="text-lg font-bold text-white">{detail.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-400">{detail.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
