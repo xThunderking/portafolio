@@ -22,7 +22,7 @@ export default function About() {
     <section id="about" className="border-t border-white/10 bg-[#101010] py-20 text-white md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
+          <div data-reveal="left">
             <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Perfil / 02</p>
             <h2 className="max-w-md text-4xl font-black md:text-5xl">Perfil, en breve.</h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-zinc-400">
@@ -42,6 +42,9 @@ export default function About() {
             {profileDetails.map((detail, index) => (
               <div
                 key={detail.title}
+                data-reveal
+                data-delay={(index % 2) * 100}
+                data-spotlight
                 className={`border-b border-white/15 py-7 sm:px-7 ${index % 2 === 0 ? 'sm:border-r' : ''}`}
               >
                 <p className="mb-3 font-mono text-xs text-[#ff2442]">0{index + 1}</p>

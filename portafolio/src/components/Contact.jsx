@@ -28,7 +28,7 @@ export default function Contact() {
     <section id="contact" className="border-t border-white/10 bg-black py-20 text-white md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
-          <div>
+          <div data-reveal="left">
             <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Contacto / 04</p>
             <h2 className="max-w-2xl text-4xl font-black leading-tight md:text-6xl">
               Conversemos sobre el próximo producto.
@@ -38,16 +38,19 @@ export default function Contact() {
             </p>
             <a
               href="mailto:sirr.rayo@gmail.com"
-              className="mt-9 inline-flex min-h-12 items-center justify-center bg-[#f20d2f] px-6 text-sm font-bold text-white transition hover:bg-[#ff2442] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="motion-button mt-9 inline-flex min-h-12 items-center justify-center bg-[#f20d2f] px-6 text-sm font-bold text-white transition hover:bg-[#ff2442] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               Escribir por correo
             </a>
           </div>
 
           <div className="border-t border-white/15">
-            {contactLinks.map(link => (
+            {contactLinks.map((link, index) => (
               <a
                 key={link.label}
+                data-reveal
+                data-delay={index * 80}
+                data-spotlight
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -65,7 +68,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <footer className="mt-20 flex flex-col gap-5 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+        <footer data-reveal className="mt-20 flex flex-col gap-5 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <img src={rayoLogo} alt="RAYO Software Engineer" className="h-12 w-auto object-contain object-left" />
           <p className="text-xs text-zinc-600">© {new Date().getFullYear()} Silvestre Reyna. Software Engineer.</p>
         </footer>

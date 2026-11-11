@@ -48,7 +48,7 @@ export default function Technologies() {
   return (
     <section id="tech" className="overflow-hidden border-t border-white/10 bg-[#080808] py-20 text-white md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-10 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+        <div data-reveal className="mb-10 grid gap-5 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
             <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Stack / 03</p>
             <h2 className="text-4xl font-black md:text-5xl">Herramientas de trabajo.</h2>
@@ -59,7 +59,7 @@ export default function Technologies() {
         </div>
       </div>
 
-      <div className="space-y-3 border-y border-white/10 py-6">
+      <div data-reveal className="tech-window space-y-3 border-y border-white/10 py-6">
         {technologyRows.map((row, rowIndex) => (
           <div
             key={rowIndex}

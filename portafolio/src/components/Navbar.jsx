@@ -14,7 +14,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 text-white backdrop-blur-xl">
+    <nav className="animated-nav fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 text-white backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <a
           href="#home"
@@ -43,7 +43,7 @@ export default function Navbar() {
             href="https://drive.google.com/file/d/19Z6dreZ7j8tRQrm_wA385sFtl_KtE8Y3/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-[#f20d2f] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#f20d2f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a70]"
+            className="motion-button border border-[#f20d2f] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#f20d2f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a70]"
           >
             Ver CV
           </a>
@@ -72,7 +72,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-[#080808] px-6 py-5 md:hidden">
+        <div className="mobile-menu-enter border-t border-white/10 bg-[#080808] px-6 py-5 md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col">
             {navigation.map(item => (
               <a

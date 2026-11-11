@@ -159,7 +159,7 @@ export default function Projects() {
     <>
       <section id="projects" className="border-t border-white/10 bg-[#070707] py-14 text-white md:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-7 grid gap-4 border-b border-white/15 pb-6 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+          <div data-reveal className="mb-7 grid gap-4 border-b border-white/15 pb-6 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
               <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Proyectos / 01</p>
               <h2 className="text-4xl font-black text-white md:text-5xl">Proyectos que resuelven.</h2>
@@ -173,6 +173,9 @@ export default function Projects() {
             {projects.map((project, projectIndex) => (
               <article
                 key={project.title}
+                data-reveal
+                data-delay={(projectIndex % 2) * 100}
+                data-spotlight
                 className="overflow-hidden border border-white/15 bg-[#101010] transition-colors hover:border-[#f20d2f]/70"
               >
                 {project.images.length > 0 && (
@@ -240,14 +243,14 @@ export default function Projects() {
 
       {selectedProject && selectedAsset && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-3 backdrop-blur-md sm:p-6"
+          className="gallery-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-3 backdrop-blur-md sm:p-6"
           onClick={() => setSelectedImage(null)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-image-title"
         >
           <div
-            className="w-full max-w-6xl overflow-hidden rounded-[4px] border border-white/15 bg-[#0b0b0b] shadow-2xl"
+            className="gallery-panel w-full max-w-6xl overflow-hidden rounded-[4px] border border-white/15 bg-[#0b0b0b] shadow-2xl"
             onClick={event => event.stopPropagation()}
           >
             <div className="flex min-h-16 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 text-white sm:px-6">
@@ -270,9 +273,10 @@ export default function Projects() {
 
             <div className="flex min-h-[280px] items-center justify-center bg-black p-2 sm:min-h-[420px] sm:p-4">
               <img
+                key={selectedAsset.src}
                 src={selectedAsset.src}
                 alt={selectedAsset.alt}
-                className="max-h-[70vh] w-full object-contain"
+                className="gallery-image max-h-[70vh] w-full object-contain"
               />
             </div>
 
