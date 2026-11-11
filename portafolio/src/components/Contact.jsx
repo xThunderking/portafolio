@@ -19,7 +19,7 @@ const contactLinks = [
   {
     label: 'Currículum',
     detail: 'Ver experiencia completa',
-    href: 'https://drive.google.com/file/d/1jTpmY4fkbJ9yqddE0TldSMHXP7qBLWsE/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/19Z6dreZ7j8tRQrm_wA385sFtl_KtE8Y3/view?usp=sharing',
   },
 ]
 

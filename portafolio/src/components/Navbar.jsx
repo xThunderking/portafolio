@@ -40,7 +40,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://drive.google.com/file/d/1jTpmY4fkbJ9yqddE0TldSMHXP7qBLWsE/view?usp=sharing"
+            href="https://drive.google.com/file/d/19Z6dreZ7j8tRQrm_wA385sFtl_KtE8Y3/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-[#f20d2f] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#f20d2f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a70]"
@@ -85,7 +85,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/1jTpmY4fkbJ9yqddE0TldSMHXP7qBLWsE/view?usp=sharing"
+              href="https://drive.google.com/file/d/19Z6dreZ7j8tRQrm_wA385sFtl_KtE8Y3/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex justify-center bg-[#f20d2f] px-4 py-3 text-sm font-bold text-white"

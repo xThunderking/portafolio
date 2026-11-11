@@ -58,7 +58,7 @@ export default function Hero() {
 
         <div className="mt-10 grid max-w-2xl grid-cols-2 border-y border-white/15 text-sm text-zinc-400">
           <div className="border-r border-white/15 py-4 pr-4">
-            <strong className="mr-2 text-base text-white">04</strong>
+            <strong className="mr-2 text-base text-white">08</strong>
             proyectos seleccionados
           </div>
           <div className="py-4 pl-4">

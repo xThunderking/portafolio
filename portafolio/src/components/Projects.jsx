@@ -11,6 +11,9 @@ import farmaclinic3 from '../assets/img/farmaclinic3.png'
 import fermont1 from '../assets/img/fermont1.png'
 import fermont2 from '../assets/img/fermont2.png'
 import fermont3 from '../assets/img/fermont3.png'
+import registro1 from '../assets/img/registro1.png'
+import registro2 from '../assets/img/registro2.png'
+import registro3 from '../assets/img/registro3.png'
 
 const projects = [
   {
@@ -23,6 +26,18 @@ const projects = [
       { src: agenda1, alt: 'Panel principal de administración del sistema Agenda' },
       { src: agenda2, alt: 'Módulo de reservas de aulas' },
       { src: agenda3, alt: 'Vista principal de usuario del sistema Agenda' },
+    ],
+  },
+  {
+    title: 'Registro de Invitados',
+    type: 'Gestión de eventos',
+    summary: 'Aplicación web para organizar la lista de invitados y agilizar el registro de llegada en eventos, con una experiencia sencilla tanto para asistentes como para el equipo organizador.',
+    impact: 'Permite encontrar invitados por nombre, confirmar su asistencia al instante y seguir el avance del evento con estadísticas en tiempo real y exportación a Excel.',
+    stack: ['Búsqueda de invitados', 'Registro de asistencia', 'Estadísticas', 'Exportación a Excel'],
+    images: [
+      { src: registro1, alt: 'Pantalla de bienvenida para buscar invitados y registrar su llegada al evento' },
+      { src: registro2, alt: 'Confirmación visual de asistencia después del registro del invitado' },
+      { src: registro3, alt: 'Estadísticas de invitados, asistencias confirmadas y pendientes' },
     ],
   },
   {
@@ -55,25 +70,35 @@ const projects = [
     summary: 'Sistema web mobile-first para gestionar clientes y valoraciones de una cabina cosmetológica.',
     impact: 'Integra historial cosmetológico, mapa interactivo, protocolo, consentimiento firmado, fotografías y reportes de valoración en un solo flujo.',
     stack: ['JavaScript', 'CSS', 'HTML'],
-    gallery: 'portrait',
     images: [
       { src: fermont1, alt: 'Panel móvil principal del sistema Fermont' },
       { src: fermont2, alt: 'Gestión de valoraciones pendientes en Fermont' },
       { src: fermont3, alt: 'Mapa facial interactivo de Fermont' },
     ],
   },
-]
-
-const additionalProjects = [
   {
     title: 'Whaticket',
     type: 'Mensajería empresarial',
-    summary: 'Plataforma de control de sesiones de WhatsApp que identifica al responsable de cada mensaje y mejora la trazabilidad por agente.',
+    summary: 'Plataforma para controlar sesiones de WhatsApp e identificar al responsable de cada mensaje, con trazabilidad por agente.',
+    impact: 'Ayuda a supervisar las conversaciones y dar seguimiento a la atención de cada agente.',
+    stack: ['WhatsApp', 'Sesiones', 'Agentes', 'Trazabilidad'],
+    images: [],
   },
   {
     title: 'SIRRGEN',
     type: 'Gestión clínica',
     summary: 'Agenda clínica integral con pacientes, historia médica, sitio institucional y un portal para consultar el historial de citas.',
+    impact: 'Integra la agenda y la información clínica, además de facilitar a los pacientes la consulta de sus citas.',
+    stack: ['Agenda clínica', 'Pacientes', 'Historia médica', 'Portal de citas'],
+    images: [],
+  },
+  {
+    title: 'HAQPOS',
+    type: 'Punto de venta e inventario',
+    summary: 'Sistema de punto de venta para operar tres áreas con usuarios e inventarios independientes, con la posibilidad de agregar nuevas áreas conforme crece la operación.',
+    impact: 'Mantiene el control del almacén y permite registrar ventas con pago en efectivo o a crédito.',
+    stack: ['Punto de venta', '3 áreas', 'Inventario por área', 'Efectivo', 'Crédito', 'Áreas ampliables'],
+    images: [],
   },
 ]
 
@@ -132,118 +157,74 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="border-t border-white/10 bg-[#070707] py-20 text-white md:py-24">
+      <section id="projects" className="border-t border-white/10 bg-[#070707] py-14 text-white md:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12 grid gap-6 border-b border-white/15 pb-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+          <div className="mb-7 grid gap-4 border-b border-white/15 pb-6 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
               <p className="mb-4 text-xs font-bold uppercase text-[#ff2442]">Proyectos / 01</p>
-              <h2 className="text-4xl font-black text-white md:text-5xl">Trabajo seleccionado.</h2>
+              <h2 className="text-4xl font-black text-white md:text-5xl">Proyectos que resuelven.</h2>
             </div>
-            <p className="max-w-xl text-base leading-7 text-zinc-400 lg:justify-self-end">
-              Productos construidos para resolver necesidades concretas, desde la interfaz hasta la lógica del sistema.
+            <p className="max-w-xl text-sm leading-6 text-zinc-400 lg:justify-self-end">
+              Sistemas y experiencias digitales diseñados alrededor de cada operación: qué problema resuelven, cómo funcionan y qué aportan al negocio.
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid gap-4 md:grid-cols-2">
             {projects.map((project, projectIndex) => (
               <article
                 key={project.title}
-                className="grid overflow-hidden rounded-[4px] border border-white/15 bg-[#101010] transition hover:border-[#f20d2f]/70 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.65fr)]"
+                className="overflow-hidden border border-white/15 bg-[#101010] transition-colors hover:border-[#f20d2f]/70"
               >
-                <div className="border-b border-white/10 bg-black p-3 lg:border-b-0 lg:border-r">
-                  {project.gallery === 'portrait' ? (
-                    <div className="grid grid-cols-3 gap-3">
-                      {project.images.map((image, imageIndex) => (
-                        <button
-                          key={image.alt}
-                          type="button"
-                          onClick={() => openImage(projectIndex, imageIndex)}
-                          className="group relative aspect-[9/16] overflow-hidden rounded-[3px] bg-zinc-950 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f20d2f]"
-                        >
-                          <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="h-full w-full object-contain object-top transition duration-500 group-hover:scale-[1.025]"
-                            loading="lazy"
-                          />
-                          <span className="absolute bottom-2 left-2 bg-black/85 px-2 py-1 text-xs font-bold text-white backdrop-blur">
-                            Vista 0{imageIndex + 1}
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <>
+                {project.images.length > 0 && (
+                  <div className="grid grid-cols-3 gap-px border-b border-white/10 bg-white/10">
+                    {project.images.map((image, imageIndex) => (
                       <button
+                        key={image.alt}
                         type="button"
-                        onClick={() => openImage(projectIndex, 0)}
-                        className="group relative block aspect-[16/10] w-full overflow-hidden rounded-[3px] bg-zinc-950 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f20d2f]"
+                        onClick={() => openImage(projectIndex, imageIndex)}
+                        aria-label={`Abrir ${image.alt}`}
+                        className="group relative aspect-[16/9] overflow-hidden bg-black text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#f20d2f]"
                       >
                         <img
-                          src={project.images[0].src}
-                          alt={project.images[0].alt}
-                          className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.025]"
-                          loading={projectIndex === 0 ? 'eager' : 'lazy'}
+                          src={image.src}
+                          alt={image.alt}
+                          className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.04]"
+                          loading={projectIndex === 0 && imageIndex === 0 ? 'eager' : 'lazy'}
                         />
-                        <span className="absolute bottom-3 left-3 bg-black/85 px-3 py-2 text-xs font-bold text-white backdrop-blur">
-                          Abrir vista 01
+                        <span className="absolute bottom-1.5 left-1.5 bg-black/85 px-1.5 py-1 font-mono text-[10px] font-bold text-white backdrop-blur">
+                          0{imageIndex + 1} ↗
                         </span>
                       </button>
-
-                      <div className="mt-3 grid grid-cols-2 gap-3">
-                        {project.images.slice(1).map((image, imageIndex) => (
-                          <button
-                            key={image.alt}
-                            type="button"
-                            onClick={() => openImage(projectIndex, imageIndex + 1)}
-                            className={`group relative overflow-hidden rounded-[3px] bg-zinc-950 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f20d2f] ${project.images.length === 2 ? 'col-span-2 aspect-[16/5]' : 'aspect-video'}`}
-                          >
-                            <img
-                              src={image.src}
-                              alt={image.alt}
-                              className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.035]"
-                              loading="lazy"
-                            />
-                            <span className="absolute bottom-2 left-2 bg-black/85 px-2 py-1 text-xs font-bold text-white backdrop-blur">
-                              Vista 0{imageIndex + 2}
-                            </span>
-                          </button>
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                <div className="flex flex-col justify-between p-6 md:p-8">
-                  <div>
-                    <div className="mb-8 flex items-center justify-between gap-4 border-b border-white/10 pb-4">
-                      <span className="text-xs font-bold uppercase text-[#ff2442]">{project.type}</span>
-                      <span className="font-mono text-sm text-zinc-500">0{projectIndex + 1}</span>
-                    </div>
-
-                    <h3 className="text-3xl font-black text-white">{project.title}</h3>
-                    <p className="mt-4 text-base leading-7 text-zinc-400">{project.summary}</p>
-                    <p className="mt-6 border-l-2 border-[#f20d2f] pl-4 text-sm font-semibold leading-6 text-zinc-200">
-                      {project.impact}
-                    </p>
-                    {project.repository && (
-                      <a
-                        href={project.repository}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-6 inline-flex items-center gap-2 border-b border-[#f20d2f] pb-1 text-sm font-bold text-white transition hover:text-[#ff2442] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f20d2f]"
-                      >
-                        Ver repositorio
-                        <span aria-hidden="true">↗</span>
-                      </a>
-                    )}
+                    ))}
                   </div>
+                )}
 
-                  <div className="mt-10 flex flex-wrap gap-2">
+                <div className="p-5">
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <span className="text-[11px] font-bold uppercase tracking-wide text-[#ff2442]">{project.type}</span>
+                    <span className="font-mono text-xs text-zinc-600">0{projectIndex + 1}</span>
+                  </div>
+                  <h3 className="text-2xl font-black text-white">{project.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-zinc-400">{project.summary}</p>
+                  <div className="mt-4 border-l-2 border-[#f20d2f] pl-3">
+                    <p className="text-[10px] font-bold uppercase tracking-wide text-zinc-500">Valor para la operación</p>
+                    <p className="mt-1 text-sm leading-5 text-zinc-200">{project.impact}</p>
+                  </div>
+                  {project.repository && (
+                    <a
+                      href={project.repository}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 border-b border-[#f20d2f] pb-1 text-sm font-bold text-white transition hover:text-[#ff2442] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f20d2f]"
+                    >
+                      Ver repositorio <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                  <div className="mt-4 flex flex-wrap gap-1.5">
                     {project.stack.map(item => (
                       <span
                         key={item}
-                        className="border border-white/15 bg-white/[0.03] px-3 py-2 text-xs font-semibold text-zinc-300"
+                        className="border border-white/10 bg-white/[0.03] px-2 py-1 text-[10px] font-semibold text-zinc-400"
                       >
                         {item}
                       </span>
@@ -254,33 +235,6 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className="mt-20 border-t border-white/15 pt-10">
-            <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-              <div>
-                <p className="mb-3 text-xs font-bold uppercase text-[#ff2442]">Más experiencia</p>
-                <h3 className="text-3xl font-black text-white">Otros proyectos.</h3>
-              </div>
-              <p className="max-w-lg text-sm leading-6 text-zinc-500">
-                Soluciones adicionales centradas en comunicación empresarial y operación clínica.
-              </p>
-            </div>
-
-            <div className="grid border-t border-white/15 md:grid-cols-2">
-              {additionalProjects.map((project, index) => (
-                <article
-                  key={project.title}
-                  className={`border-b border-white/15 py-7 md:px-7 ${index === 0 ? 'md:border-r' : ''}`}
-                >
-                  <div className="mb-4 flex items-center justify-between gap-4">
-                    <span className="text-xs font-bold uppercase text-[#ff2442]">{project.type}</span>
-                    <span className="font-mono text-xs text-zinc-600">0{index + projects.length + 1}</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-white">{project.title}</h4>
-                  <p className="mt-3 text-sm leading-6 text-zinc-400">{project.summary}</p>
-                </article>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
